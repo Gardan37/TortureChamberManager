@@ -11,6 +11,7 @@ public class PlayerHandler : MonoBehaviour
 
     public Text hitpointText;
     public Text scoreText;
+    public GameObject sceneSwitcher;
 
     private int level = 1;
     private int hitpoints = 10;
@@ -62,7 +63,6 @@ public class PlayerHandler : MonoBehaviour
             return;
         }
 
-        // emit 
-
+        sceneSwitcher.GetComponent<SimpleSceneSwitch>().OpenStartScene();
     }
 }
