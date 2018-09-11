@@ -22,4 +22,9 @@ public class PlayerHandler : MonoBehaviour
     {
         player.AddForce(new Vector2(impluseForce, 0.0f));
     }
+
+    void BottomReached()
+    {
+        player.transform.position = new Vector3(player.transform.position.x, 0.0f);
+    }
 }
