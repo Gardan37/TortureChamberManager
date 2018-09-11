@@ -11,7 +11,9 @@ public class PlayerHandler : MonoBehaviour
 
     public Text hitpointText;
     public Text scoreText;
+    public GameObject sceneSwitcher;
 
+    private int level = 1;
     private int hitpoints = 10;
     private int score = 0;
     private Rigidbody2D player;
@@ -19,6 +21,12 @@ public class PlayerHandler : MonoBehaviour
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        level = 1; 
+    }
+
+    private void Update()
+    {
+        GameOverCheck();
     }
 
     void PushLeft()
@@ -34,15 +42,27 @@ public class PlayerHandler : MonoBehaviour
     void BottomReached()
     {
         player.transform.position = new Vector3(player.transform.position.x, 0.0f);
+        level++; 
         PlayerHit(-1);
+        
     }
 
     void PlayerHit(int hitforce)
     {
         hitpoints += hitforce;
         hitpointText.text = "Hitpoints: " + hitpoints;
-        score += scorePerHit;
+        score += scorePerHit * level;
         scoreText.text = "Score: " + score;
 
+    }
+
+    void GameOverCheck()
+    {
+        if (hitpoints > 0)
+        {
+            return;
+        }
+
+        sceneSwitcher.GetComponent<SimpleSceneSwitch>().OpenStartScene();
     }
 }
