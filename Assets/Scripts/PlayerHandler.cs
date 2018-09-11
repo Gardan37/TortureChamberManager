@@ -14,19 +14,34 @@ public class PlayerHandler : MonoBehaviour
     public GameObject sceneSwitcher;
 
     private int level = 1;
-    private int hitpoints = 10;
+    private int maxhitpoints = 100;
+    private int hitpoints;
     private int score = 0;
     private Rigidbody2D player;
 
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
-        level = 1; 
+        level = 1;
+        hitpoints = maxhitpoints;
+        UpdateScore();
     }
+    private float timer = 0.0f;
 
     private void Update()
     {
         GameOverCheck();
+
+        timer += Time.deltaTime;
+        if (timer > 1)
+        {
+            timer--;
+            if (hitpoints < maxhitpoints)
+            {
+                hitpoints++;
+            }
+        }
+        UpdateScore();
     }
 
     void PushLeft()
@@ -43,17 +58,20 @@ public class PlayerHandler : MonoBehaviour
     {
         player.transform.position = new Vector3(player.transform.position.x, 0.0f);
         level++; 
-        PlayerHit(-1);
+        PlayerHit(-1*level, scorePerHit); // temporary
         
     }
 
-    void PlayerHit(int hitforce)
+    void PlayerHit(int hitforce, int hitscore)
     {
         hitpoints += hitforce;
-        hitpointText.text = "Hitpoints: " + hitpoints;
-        score += scorePerHit * level;
-        scoreText.text = "Score: " + score;
+        score += hitscore * level;
+    }
 
+    private void UpdateScore()
+    {
+        hitpointText.text = "Hitpoints: " + hitpoints;
+        scoreText.text = "Score: " + score;
     }
 
     void GameOverCheck()
@@ -62,7 +80,6 @@ public class PlayerHandler : MonoBehaviour
         {
             return;
         }
-
         sceneSwitcher.GetComponent<SimpleSceneSwitch>().OpenStartScene();
     }
 }
