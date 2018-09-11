@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerHandler : MonoBehaviour
 {
-    public float impluseForce = 10.0f;
+    public float impulseForce = 10.0f;
     private int scorePerHit = 100;
 
     public Text hitpointText;
@@ -14,7 +14,7 @@ public class PlayerHandler : MonoBehaviour
     public GameObject sceneSwitcher;
 
     private int level = 1;
-    private int maxhitpoints = 100;
+    private int maxhitpoints = 10;
     private int hitpoints;
     private int score = 0;
     private Rigidbody2D player;
@@ -46,26 +46,26 @@ public class PlayerHandler : MonoBehaviour
 
     void PushLeft()
     {
-        player.AddForce(new Vector2(-impluseForce, 0.0f));
+        player.AddForce(new Vector2(-impulseForce, 0.0f));
     }
 
     void PushRight()
     {
-        player.AddForce(new Vector2(impluseForce, 0.0f));
+        player.AddForce(new Vector2(impulseForce, 0.0f));
     }
 
     void BottomReached()
     {
         player.transform.position = new Vector3(player.transform.position.x, 0.0f);
         level++; 
-        PlayerHit(-1*level, scorePerHit); // temporary
+        //PlayerHit(-1*level, scorePerHit); // temporary
         
     }
 
-    void PlayerHit(int hitforce, int hitscore)
+    void PlayerHit(int hitforce)
     {
-        hitpoints += hitforce;
-        score += hitscore * level;
+        hitpoints -= hitforce;
+        score += hitforce * scorePerHit * level;
     }
 
     private void UpdateScore()
