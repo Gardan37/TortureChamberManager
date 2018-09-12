@@ -113,8 +113,8 @@ public class PlayerHandler : MonoBehaviour
 
     private void UpdateScore()
     {
-        hitpointText.text = "Hitpoints: " + hitpoints;
-        scoreText.text = "Score: " + score;
+        hitpointText.text = "  " + hitpoints;
+        scoreText.text = "   " + score;
     }
 
     void GameOverCheck()
