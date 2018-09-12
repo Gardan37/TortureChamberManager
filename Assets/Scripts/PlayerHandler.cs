@@ -18,6 +18,7 @@ public class PlayerHandler : MonoBehaviour
     private int hitpoints;
     private int score = 0;
     private Rigidbody2D player;
+    private float rotationSpeed = 0.0f;
 
     void Start()
     {
@@ -42,6 +43,11 @@ public class PlayerHandler : MonoBehaviour
             }
         }
         UpdateScore();
+    }
+
+    private void FixedUpdate()
+    {
+        player.MoveRotation(player.rotation + rotationSpeed * Time.fixedDeltaTime);
     }
 
     void PushLeft()
@@ -83,10 +89,13 @@ public class PlayerHandler : MonoBehaviour
         if (player.velocity.x > 0 && wallName == "Right")
         {
             player.velocity = new Vector2(-player.velocity.x, player.velocity.y);
+            rotationSpeed = 50.0f;
+            
         }
         else if (player.velocity.x < 0 && wallName == "Left")
         {
             player.velocity = new Vector2(-player.velocity.x, player.velocity.y);
+            rotationSpeed = -50.0f;
         }
 
     }
