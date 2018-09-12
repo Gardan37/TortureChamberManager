@@ -4344,7 +4344,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 69
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -4369,7 +4369,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.9862297, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8927,6 +8927,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 795874901}
+    - target: {fileID: 82511619638265168, guid: 2ab1fa87cf81946f7981be21fce42d4b,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c196314b62f24f4cb67fc72511d1652, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ab1fa87cf81946f7981be21fce42d4b, type: 2}
   m_IsPrefabAsset: 0
