@@ -20,6 +20,8 @@ public class PlayerHandler : MonoBehaviour
     private Rigidbody2D player;
     private float rotationSpeed = 0.0f;
 
+    private float timer = 0.0f;
+
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
@@ -27,7 +29,6 @@ public class PlayerHandler : MonoBehaviour
         hitpoints = maxhitpoints;
         UpdateScore();
     }
-    private float timer = 0.0f;
 
     private void Update()
     {
@@ -43,7 +44,21 @@ public class PlayerHandler : MonoBehaviour
             }
         }
         UpdateScore();
+
+        if (Input.GetMouseButton(0))
+        {
+            Debug.Log("Mouse X " + Input.mousePosition.x);
+            if (Input.mousePosition.x < 320)
+            {
+                player.AddForce(new Vector2(-impulseForce, 0.0f));
+            }
+            else if (Input.mousePosition.x > 320)
+            {
+                player.AddForce(new Vector2(impulseForce, 0.0f));
+            }
+        }
     }
+
 
     private void FixedUpdate()
     {
