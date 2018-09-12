@@ -14,6 +14,8 @@ public class PlayerHandler : MonoBehaviour
     public GameObject sceneSwitcher;
     public bool rotationEnabled = false;
 
+    public Transform splatterEffect;
+
     private int level = 1;
     private int maxhitpoints = 100;
     private int hitpoints;
@@ -91,6 +93,9 @@ public class PlayerHandler : MonoBehaviour
         hitpoints -= hitforce;
         score += hitforce * scorePerHit * level;
         player.velocity = new Vector2(player.velocity.x, 0.0f);
+
+        Transform splatter;
+        splatter = Instantiate(splatterEffect, player.position, Quaternion.identity);
     }
 
     void WallHit(string wallName)
