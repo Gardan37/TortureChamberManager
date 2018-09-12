@@ -8,12 +8,11 @@ public class TrapCollider : MonoBehaviour
 
     public GameObject player;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other == player.GetComponent<Collider2D>())
+        if (collision.gameObject.tag == "Player")
         {
-            player.SendMessage("PlayerHit", hitForce);
+            collision.gameObject.SendMessage("PlayerHit", hitForce);
         }
-
     }
 }
