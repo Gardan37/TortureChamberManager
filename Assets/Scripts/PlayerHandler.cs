@@ -90,6 +90,7 @@ public class PlayerHandler : MonoBehaviour
         Debug.Log(hitforce);
         hitpoints -= hitforce;
         score += hitforce * scorePerHit * level;
+        player.velocity = new Vector2(player.velocity.x, 0.0f);
     }
 
     void WallHit(string wallName)
