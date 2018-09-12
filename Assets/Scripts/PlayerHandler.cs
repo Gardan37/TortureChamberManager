@@ -15,7 +15,7 @@ public class PlayerHandler : MonoBehaviour
     public bool rotationEnabled = false;
 
     private int level = 1;
-    private int maxhitpoints = 10;
+    private int maxhitpoints = 100;
     private int hitpoints;
     private int score = 0;
     private Rigidbody2D player;
