@@ -48,7 +48,6 @@ public class PlayerHandler : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("Mouse X " + Input.mousePosition.x);
             if (Input.mousePosition.x < 320)
             {
                 player.AddForce(new Vector2(-impulseForce, 0.0f));
@@ -82,6 +81,7 @@ public class PlayerHandler : MonoBehaviour
     void BottomReached()
     {
         player.transform.position = new Vector3(player.transform.position.x, 0.0f);
+
         if (hitpoints == maxhitpoints)
         {
             if (level > 1)
@@ -107,13 +107,13 @@ public class PlayerHandler : MonoBehaviour
 
         if (player.velocity.x > 0 && wallName == "Right")
         {
-            player.velocity = new Vector2(-player.velocity.x, player.velocity.y);
+            player.velocity = new Vector2(-player.velocity.x/2.0f, player.velocity.y);
             rotationSpeed = 50.0f;
             
         }
         else if (player.velocity.x < 0 && wallName == "Left")
         {
-            player.velocity = new Vector2(-player.velocity.x, player.velocity.y);
+            player.velocity = new Vector2(-player.velocity.x/2.0f, player.velocity.y);
             rotationSpeed = -50.0f;
         }
 
