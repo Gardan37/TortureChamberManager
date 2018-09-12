@@ -94,8 +94,7 @@ public class PlayerHandler : MonoBehaviour
         score += hitforce * scorePerHit * level;
         player.velocity = new Vector2(player.velocity.x, 0.0f);
 
-        Transform splatter;
-        splatter = Instantiate(splatterEffect, player.position, Quaternion.identity);
+        Instantiate(splatterEffect, player.position, Quaternion.identity);
     }
 
     void WallHit(string wallName)
