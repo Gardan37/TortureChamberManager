@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 212166975441235334}
   - component: {fileID: 58822759088171574}
   - component: {fileID: 82511619638265168}
+  - component: {fileID: 114095179740764612}
   m_Layer: 0
   m_Name: Buzzsaw
   m_TagString: Untagged
@@ -93,8 +94,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067570969201342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20.62, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: -71.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4508233872790316}
@@ -230,6 +231,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114095179740764612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1745083171388062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7bd5fdb8a956af4885db1edacd157b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitForce: 4
+  player: {fileID: 0}
 --- !u!212 &212075718596849006
 SpriteRenderer:
   m_ObjectHideFlags: 1
