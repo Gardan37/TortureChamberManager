@@ -57,15 +57,38 @@ public class PlayerHandler : MonoBehaviour
     void BottomReached()
     {
         player.transform.position = new Vector3(player.transform.position.x, 0.0f);
-        level++; 
-        //PlayerHit(-1*level, scorePerHit); // temporary
-        
+        if (hitpoints == maxhitpoints)
+        {
+            if (level > 1)
+            {
+                level--;
+            }
+        }
+        else
+        {
+            level++;
+        }
     }
 
     void PlayerHit(int hitforce)
     {
         hitpoints -= hitforce;
         score += hitforce * scorePerHit * level;
+    }
+
+    void WallHit(string wallName)
+    {
+        score += scorePerHit * level;
+
+        if (player.velocity.x > 0 && wallName == "Right")
+        {
+            player.velocity = new Vector2(-player.velocity.x, player.velocity.y);
+        }
+        else if (player.velocity.x < 0 && wallName == "Left")
+        {
+            player.velocity = new Vector2(-player.velocity.x, player.velocity.y);
+        }
+
     }
 
     private void UpdateScore()

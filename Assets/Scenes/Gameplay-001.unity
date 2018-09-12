@@ -1081,6 +1081,7 @@ GameObject:
   - component: {fileID: 365323170}
   - component: {fileID: 365323169}
   - component: {fileID: 365323171}
+  - component: {fileID: 365323172}
   m_Layer: 0
   m_Name: Wall_left
   m_TagString: Untagged
@@ -1156,7 +1157,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.013929129, y: 6.8890533}
@@ -1172,6 +1173,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.8595233, y: 21.588104}
   m_EdgeRadius: 0
+--- !u!114 &365323172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 365323168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5801043a550dd4eadbbb5e51a01c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 795874901}
+  wallName: Left
 --- !u!1001 &394077174
 Prefab:
   m_ObjectHideFlags: 0
@@ -1951,6 +1965,7 @@ GameObject:
   - component: {fileID: 656658241}
   - component: {fileID: 656658240}
   - component: {fileID: 656658242}
+  - component: {fileID: 656658243}
   m_Layer: 0
   m_Name: Wall_right
   m_TagString: Untagged
@@ -2026,7 +2041,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.013929129, y: 6.8890533}
@@ -2042,6 +2057,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.8595233, y: 21.588104}
   m_EdgeRadius: 0
+--- !u!114 &656658243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 656658239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5801043a550dd4eadbbb5e51a01c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 795874901}
+  wallName: Right
 --- !u!1001 &664629154
 Prefab:
   m_ObjectHideFlags: 0
@@ -2248,7 +2276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca43172f944bd743ab7f9cc79b864fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impluseForce: 60
+  impulseForce: 10
   hitpointText: {fileID: 1840000512}
   scoreText: {fileID: 1611448066}
   sceneSwitcher: {fileID: 608516781}
