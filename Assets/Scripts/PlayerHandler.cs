@@ -12,6 +12,7 @@ public class PlayerHandler : MonoBehaviour
     public Text hitpointText;
     public Text scoreText;
     public GameObject sceneSwitcher;
+    public bool rotationEnabled = false;
 
     private int level = 1;
     private int maxhitpoints = 10;
@@ -62,7 +63,10 @@ public class PlayerHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        player.MoveRotation(player.rotation + rotationSpeed * Time.fixedDeltaTime);
+        if (rotationEnabled)
+        {
+            player.MoveRotation(player.rotation + rotationSpeed * Time.fixedDeltaTime);
+        }
     }
 
     void PushLeft()
