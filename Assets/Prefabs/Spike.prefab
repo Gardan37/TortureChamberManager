@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitForce: 3
-  player: {fileID: 0}
+  player: {fileID: 1629447829599828, guid: ca8b8cb58609640438790633694baa09, type: 2}
 --- !u!212 &212920261945961758
 SpriteRenderer:
   m_ObjectHideFlags: 1
