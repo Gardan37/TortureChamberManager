@@ -114,6 +114,8 @@ public class PlayerHandler : MonoBehaviour
             rotationSpeed = -50.0f;
         }
 
+        Transform splatter;
+        splatter = Instantiate(splatterEffect, player.position, Quaternion.identity);
     }
 
     private void UpdateScore()
