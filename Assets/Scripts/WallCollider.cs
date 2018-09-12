@@ -18,7 +18,7 @@ public class WallCollider : MonoBehaviour
     {
         if (other == player.GetComponent<Collider2D>())
         {
-        	        audioData.Play(0);
+        	audioData.Play(0);
 
             player.SendMessage("WallHit", wallName);
         }
